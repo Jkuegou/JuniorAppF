@@ -599,95 +599,97 @@
                 </div>
 
                 {{-- <form id="paymentForm">
-                    <div class="form-group">
-                        <label for="cardName" class="form-label">Cardholder Name</label>
-                        <input type="text" id="cardName" class="form-input" placeholder="John Doe" required>
-                    </div>
                     
-                    <div class="form-group">
-                        <label for="cardNumber" class="form-label">Card Number</label>
-                        <input type="text" id="cardNumber" class="form-input" placeholder="1234 5678 9012 3456" required>
-                    </div>
                     
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="expiryDate" class="form-label">Expiry Date</label>
-                            <input type="text" id="expiryDate" class="form-input" placeholder="MM/YY" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="cvv" class="form-label">CVV</label>
-                            <input type="text" id="cvv" class="form-input" placeholder="123" required>
-                        </div>
-                    </div>
                     
-                    <h2 class="section-title">Billing Details</h2>
                     
-                    <div class="form-group">
-                        <label for="billingAddress" class="form-label">Billing Address</label>
-                        <input type="text" id="billingAddress" class="form-input" placeholder="123 Main St" required>
-                    </div>
                     
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="city" class="form-label">City</label>
-                            <input type="text" id="city" class="form-input" placeholder="New York" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="zipCode" class="form-label">ZIP Code</label>
-                            <input type="text" id="zipCode" class="form-input" placeholder="10001" required>
-                        </div>
-                    </div>
                     
-                    <div class="form-group">
-                        <label for="country" class="form-label">Country</label>
-                        <input type="text" id="country" class="form-input" placeholder="United States" required>
-                    </div>
                     
-                    <button type="submit" class="pay-now-btn">Pay Now</button>
-                    
-                    <div class="secure-payment">
-                        <i class="fas fa-lock"></i> Secure Payment Processing
-                    </div>
                 </form> --}}
 
                 @if (session('success'))
-                    <div style="color: green;">
-                        {{ session('success') }}
-                    </div>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const successPopup = document.getElementById('successPopup');
+                            const continueBtn = document.getElementById('continueBtn');
+
+                            successPopup.classList.add('active');
+                            document.body.style.overflow = 'hidden';
+
+                            continueBtn.addEventListener('click', () => {
+                                successPopup.classList.remove('active');
+                                document.body.style.overflow = 'auto';
+                                window.location.href = "{{ route('find-food') }}";
+                            });
+                        });
+                    </script>
                 @endif
 
                 <form id="paymentForm" method="POST" action="{{ route('orders.store') }}">
                     @csrf
 
-                    <label>Name on Card:</label>
-                    <input type="text" name="card_name" required><br>
+                    <div class="form-group">
+                        <label for="cardName" class="form-label">Cardholder Name</label>
+                        <input type="text" id="cardName" name="card_name" class="form-input"
+                            placeholder="Appolinaire Junior" required>
+                    </div>
 
-                    <label>Card Number:</label>
-                    <input type="text" name="card_number" required><br>
+                    <div class="form-group">
+                        <label for="cardNumber" class="form-label">Card Number</label>
+                        <input type="text" id="cardNumber" name="card_number" class="form-input"
+                            placeholder="1234 5678 9012 3456" required>
+                    </div>
 
-                    <label>Expiry Date:</label>
-                    <input type="text" name="expiry_date" required><br>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiryDate" class="form-label">Expiry Date:</label>
+                            <input type="text" name="expiry_date" id="expiryDate" class="form-input"
+                                placeholder="MM/YY" required>
+                        </div>
 
-                    <label>CVV:</label>
-                    <input type="text" name="cvv" required><br>
+                        <div class="form-group">
+                            <label for="cvv" class="form-label">CVV:</label>
+                            <input type="text" id="cvv" class="form-input" placeholder="123"
+                                name="cvv" required>
+                        </div>
+                    </div>
 
-                    <label>Billing Address:</label>
-                    <input type="text" name="billing_address" required><br>
+                    <h2 class="section-title">Billing Details</h2>
 
-                    <label>City:</label>
-                    <input type="text" name="city" required><br>
+                    <div class="form-group">
+                        <label for="billingAddress" class="form-label">Billing Address:</label>
+                        <input type="text" id="billingAddress" class="form-input" name="billing_address"
+                            placeholder="123 Main St" required>
+                    </div>
 
-                    <label>Zip Code:</label>
-                    <input type="text" name="zip_code" required><br>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city" class="form-label">City:</label>
+                            <input type="text" name="city" id="city" class="form-input"
+                                placeholder="New York" required>
+                        </div>
 
-                    <label>Country:</label>
-                    <input type="text" name="country" required><br>
+                        <div class="form-group">
+                            <label for="zipCode" class="form-label">Zip Code:</label>
+                            <input type="text" name="zip_code" id="zipCode" class="form-input"
+                                placeholder="10001" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country" class="form-label">Country:</label>
+                        <input type="text" name="country" id="country" class="form-input"
+                            placeholder="United States" required>
+                    </div>
 
                     <input type="hidden" name="order_items" id="orderItems">
 
-                    <button type="submit">Pay Now</button>
+                    <button type="submit" class="pay-now-btn">Pay Now</button>
+
+                    <div class="secure-payment">
+                        <i class="fas fa-lock"></i> Secure Payment Processing
+                    </div>
                 </form>
             </div>
 
