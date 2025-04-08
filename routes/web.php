@@ -72,6 +72,9 @@ Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/user/dashboard', [UserController::class, 'index'])->name('user.dashboard');
 });
 
+Route::get('/my-orders', [OrderController::class, 'myOrders'])->name('my-orders');
+
+
 // // Dashboard
 // Route::get('/dashboardm', [DashboardController::class, 'index'])->name('dashboardm');
 
@@ -169,4 +172,4 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/payment/success', [PaymentController::class, 'success'])->name('payment.success');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

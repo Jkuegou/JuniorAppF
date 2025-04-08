@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -219,7 +220,8 @@
             color: #666;
         }
 
-        .filter-btn:hover, .filter-btn.active {
+        .filter-btn:hover,
+        .filter-btn.active {
             background-color: #ff7000;
             color: white;
             border-color: #ff7000;
@@ -492,12 +494,12 @@
             .popup-content {
                 flex-direction: column;
             }
-            
+
             .popup-left {
                 padding-right: 0;
                 margin-bottom: 20px;
             }
-            
+
             .popup-right {
                 width: 100%;
                 border-left: none;
@@ -505,11 +507,11 @@
                 padding-left: 0;
                 padding-top: 20px;
             }
-            
+
             .food-grid {
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             }
-            
+
             .filter-btn {
                 padding: 8px 15px;
                 font-size: 13px;
@@ -520,7 +522,7 @@
             .food-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .search-container {
                 display: none;
             }
@@ -528,18 +530,19 @@
             .food-filters {
                 gap: 10px;
             }
-            
+
             .filter-btn {
                 padding: 6px 12px;
                 font-size: 12px;
             }
-            
+
             .popup-image-container {
                 height: 200px;
             }
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -583,7 +586,7 @@
                             alt="Profile" class="profile-img" id="profileImg">
                         <div class="profile-dropdown" id="profileDropdown">
                             @auth
-                                @if(auth()->user()->role === 'admin')
+                                @if (auth()->user()->role === 'admin')
                                     <a href="{{ route('admin.dashboard') }}" class="dropdown-item">Admin Dashboard</a>
                                 @else
                                     <a href="{{ route('user.dashboard') }}" class="dropdown-item">User Dashboard</a>
@@ -607,8 +610,16 @@
     </header>
 
     <main class="container">
+
+        <button class="popup-btn order-now-btn">
+            <a href="{{ route('my-orders') }}" style="color: white">
+                <i class="fas fa-bolt mr-2"></i> My Foods
+            </a>
+        </button>
+
+
         <h1 class="page-title">Discover Delicious Foods</h1>
-        
+
         <div class="food-filters">
             <button class="filter-btn active">All</button>
             <button class="filter-btn">Fast Food</button>
@@ -618,11 +629,14 @@
             <button class="filter-btn">Desserts</button>
             <button class="filter-btn">Drinks</button>
         </div>
-        
+
         <div class="food-grid">
             <!-- Food Item 1 -->
-            <div class="food-card" data-id="1" data-name="Classic Beef Burger" data-category="Burgers" data-price="8.99" data-img="https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3">
-                <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3" alt="Burger" class="food-img">
+            <div class="food-card" data-id="1" data-name="Classic Beef Burger" data-category="Burgers"
+                data-price="8.99"
+                data-img="https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3">
+                <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3" alt="Burger"
+                    class="food-img">
                 <div class="food-info">
                     <h3 class="food-name">Classic Beef Burger</h3>
                     <p class="food-category">Burgers</p>
@@ -634,10 +648,13 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Food Item 2 -->
-            <div class="food-card" data-id="2" data-name="Margherita Pizza" data-category="Pizza" data-price="11.99" data-img="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3">
-                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3" alt="Pizza" class="food-img">
+            <div class="food-card" data-id="2" data-name="Margherita Pizza" data-category="Pizza"
+                data-price="11.99"
+                data-img="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3" alt="Pizza"
+                    class="food-img">
                 <div class="food-info">
                     <h3 class="food-name">Margherita Pizza</h3>
                     <p class="food-category">Pizza</p>
@@ -649,10 +666,12 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Food Item 3 -->
-            <div class="food-card" data-id="3" data-name="Sushi Combo" data-category="Asian" data-price="15.99" data-img="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?ixlib=rb-4.0.3">
-                <img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?ixlib=rb-4.0.3" alt="Sushi" class="food-img">
+            <div class="food-card" data-id="3" data-name="Sushi Combo" data-category="Asian" data-price="15.99"
+                data-img="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?ixlib=rb-4.0.3">
+                <img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?ixlib=rb-4.0.3" alt="Sushi"
+                    class="food-img">
                 <div class="food-info">
                     <h3 class="food-name">Sushi Combo</h3>
                     <p class="food-category">Asian</p>
@@ -664,10 +683,13 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Food Item 4 -->
-            <div class="food-card" data-id="4" data-name="Vanilla Ice Cream" data-category="Desserts" data-price="4.99" data-img="https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?ixlib=rb-4.0.3">
-                <img src="https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?ixlib=rb-4.0.3" alt="Ice Cream" class="food-img">
+            <div class="food-card" data-id="4" data-name="Vanilla Ice Cream" data-category="Desserts"
+                data-price="4.99"
+                data-img="https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?ixlib=rb-4.0.3">
+                <img src="https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?ixlib=rb-4.0.3" alt="Ice Cream"
+                    class="food-img">
                 <div class="food-info">
                     <h3 class="food-name">Vanilla Ice Cream</h3>
                     <p class="food-category">Desserts</p>
@@ -679,10 +701,13 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Food Item 5 -->
-            <div class="food-card" data-id="5" data-name="Spicy Chicken Wings" data-category="Fast Food" data-price="9.99" data-img="https://images.unsplash.com/photo-1619221882266-cf391a57767b?ixlib=rb-4.0.3">
-                <img src="https://images.unsplash.com/photo-1619221882266-cf391a57767b?ixlib=rb-4.0.3" alt="Chicken Wings" class="food-img">
+            <div class="food-card" data-id="5" data-name="Spicy Chicken Wings" data-category="Fast Food"
+                data-price="9.99"
+                data-img="https://images.unsplash.com/photo-1619221882266-cf391a57767b?ixlib=rb-4.0.3">
+                <img src="https://images.unsplash.com/photo-1619221882266-cf391a57767b?ixlib=rb-4.0.3"
+                    alt="Chicken Wings" class="food-img">
                 <div class="food-info">
                     <h3 class="food-name">Spicy Chicken Wings</h3>
                     <p class="food-category">Fast Food</p>
@@ -694,10 +719,13 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Food Item 6 -->
-            <div class="food-card" data-id="6" data-name="Spaghetti Carbonara" data-category="Italian" data-price="12.99" data-img="https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?ixlib=rb-4.0.3">
-                <img src="https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?ixlib=rb-4.0.3" alt="Pasta" class="food-img">
+            <div class="food-card" data-id="6" data-name="Spaghetti Carbonara" data-category="Italian"
+                data-price="12.99"
+                data-img="https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?ixlib=rb-4.0.3">
+                <img src="https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?ixlib=rb-4.0.3" alt="Pasta"
+                    class="food-img">
                 <div class="food-info">
                     <h3 class="food-name">Spaghetti Carbonara</h3>
                     <p class="food-category">Italian</p>
@@ -709,10 +737,13 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Food Item 7 -->
-            <div class="food-card" data-id="7" data-name="Berry Smoothie" data-category="Drinks" data-price="5.99" data-img="https://images.unsplash.com/photo-1625807752781-544f90255196?ixlib=rb-4.0.3">
-                <img src="https://images.unsplash.com/photo-1625807752781-544f90255196?ixlib=rb-4.0.3" alt="Smoothie" class="food-img">
+            <div class="food-card" data-id="7" data-name="Berry Smoothie" data-category="Drinks"
+                data-price="5.99"
+                data-img="https://images.unsplash.com/photo-1625807752781-544f90255196?ixlib=rb-4.0.3">
+                <img src="https://images.unsplash.com/photo-1625807752781-544f90255196?ixlib=rb-4.0.3" alt="Smoothie"
+                    class="food-img">
                 <div class="food-info">
                     <h3 class="food-name">Berry Smoothie</h3>
                     <p class="food-category">Drinks</p>
@@ -724,10 +755,13 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Food Item 8 -->
-            <div class="food-card" data-id="8" data-name="Caesar Salad" data-category="Healthy" data-price="7.99" data-img="https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?ixlib=rb-4.0.3">
-                <img src="https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?ixlib=rb-4.0.3" alt="Salad" class="food-img">
+            <div class="food-card" data-id="8" data-name="Caesar Salad" data-category="Healthy"
+                data-price="7.99"
+                data-img="https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?ixlib=rb-4.0.3">
+                <img src="https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?ixlib=rb-4.0.3" alt="Salad"
+                    class="food-img">
                 <div class="food-info">
                     <h3 class="food-name">Caesar Salad</h3>
                     <p class="food-category">Healthy</p>
@@ -740,7 +774,7 @@
                 </div>
             </div>
         </div>
-        
+
         <button class="load-more">Load More</button>
     </main>
 
@@ -760,14 +794,16 @@
                     <h2 class="food-name" id="popupName"></h2>
                     <p class="food-category" id="popupCategory"></p>
                     <div class="popup-description" id="popupDescription">
-                        Delicious food item prepared with the finest ingredients. Our chefs take great care to ensure the best taste and quality in every bite.
+                        Delicious food item prepared with the finest ingredients. Our chefs take great care to ensure
+                        the best taste and quality in every bite.
                     </div>
                 </div>
                 <div class="popup-right">
                     <div class="popup-price" id="popupPrice"></div>
                     <div class="quantity-control">
                         <button class="quantity-btn" id="decreaseQty">-</button>
-                        <input type="number" min="1" value="1" class="quantity-input" id="quantityInput">
+                        <input type="number" min="1" value="1" class="quantity-input"
+                            id="quantityInput">
                         <button class="quantity-btn" id="increaseQty">+</button>
                     </div>
                     <button class="popup-btn add-cart-btn">
@@ -829,21 +865,21 @@
                 const addToCartBtn = card.querySelector('.add-to-cart');
                 addToCartBtn.addEventListener('click', (e) => {
                     e.stopPropagation(); // Prevent card click event
-                    
+
                     // Get food data from card attributes
                     const foodId = card.dataset.id;
                     const foodName = card.dataset.name;
                     const foodCategory = card.dataset.category;
                     const foodPrice = card.dataset.price;
                     const foodImg = card.dataset.img;
-                    
+
                     // Populate popup with food data
                     popupImage.src = foodImg;
                     popupName.textContent = foodName;
                     popupCategory.textContent = foodCategory;
                     popupPrice.textContent = `$${foodPrice}`;
                     quantityInput.value = 1;
-                    
+
                     // Show popup
                     foodPopup.classList.add('active');
                     document.body.style.overflow = 'hidden'; // Prevent scrolling
@@ -890,15 +926,15 @@
             addCartBtn.addEventListener('click', () => {
                 const foodName = popupName.textContent;
                 const qty = parseInt(quantityInput.value);
-                
+
                 // Here you would typically add the item to cart
                 console.log(`Added ${qty} ${foodName} to cart`);
-                
+
                 // Update cart badge
                 const cartBadge = document.querySelector('.cart-badge');
                 const currentCount = parseInt(cartBadge.textContent);
                 cartBadge.textContent = currentCount + 1;
-                
+
                 // Close popup
                 foodPopup.classList.remove('active');
                 document.body.style.overflow = 'auto'; // Enable scrolling
@@ -909,10 +945,10 @@
             orderNowBtn.addEventListener('click', () => {
                 const foodName = popupName.textContent;
                 const qty = parseInt(quantityInput.value);
-                
+
                 // Here you would redirect to order/checkout page
                 console.log(`Ordering ${qty} ${foodName} now`);
-                
+
                 // For demo purposes, just close the popup
                 foodPopup.classList.remove('active');
                 document.body.style.overflow = 'auto'; // Enable scrolling
@@ -920,4 +956,5 @@
         });
     </script>
 </body>
+
 </html>
