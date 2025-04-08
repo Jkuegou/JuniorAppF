@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -485,22 +486,23 @@
             .payment-container {
                 flex-direction: column;
             }
-            
+
             .form-row {
                 flex-direction: column;
                 gap: 0;
             }
-            
+
             .payment-methods {
                 flex-direction: column;
             }
-            
+
             .search-container {
                 display: none;
             }
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -548,7 +550,8 @@
                             <div class="dropdown-divider"></div>
                             <form method="POST" action="{{ route('logout') }}" class="dropdown-item">
                                 @csrf
-                                <button type="submit" style="background: none; border: none; padding: 0; color: #333; cursor: pointer;">
+                                <button type="submit"
+                                    style="background: none; border: none; padding: 0; color: #333; cursor: pointer;">
                                     <i class="fas fa-sign-out-alt mr-1"></i> Logout
                                 </button>
                             </form>
@@ -561,34 +564,41 @@
 
     <main class="container">
         <h1 class="page-title">Complete Your Payment</h1>
-        
+
         <div class="payment-container">
             <div class="payment-form">
                 <h2 class="section-title">Payment Details</h2>
-                
+
                 <div class="payment-methods">
                     <div class="payment-method active">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Old_Visa_Logo.svg/2560px-Old_Visa_Logo.svg.png" alt="Credit Card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Old_Visa_Logo.svg/2560px-Old_Visa_Logo.svg.png"
+                            alt="Credit Card">
                         <div class="payment-method-name">Credit Card</div>
                     </div>
                     <div class="payment-method">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/2560px-PayPal.svg.png" alt="PayPal">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/2560px-PayPal.svg.png"
+                            alt="PayPal">
                         <div class="payment-method-name">PayPal</div>
                     </div>
                     <div class="payment-method">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1667px-Apple_logo_black.svg.png" alt="Apple Pay">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1667px-Apple_logo_black.svg.png"
+                            alt="Apple Pay">
                         <div class="payment-method-name">Apple Pay</div>
                     </div>
                 </div>
-                
+
                 <div class="card-icons">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Old_Visa_Logo.svg/2560px-Old_Visa_Logo.svg.png" alt="Visa" class="card-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png" alt="Mastercard" class="card-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/1200px-American_Express_logo_%282018%29.svg.png" alt="Amex" class="card-icon">
-                    <img src="https://www.discover.com/content/dam/discover/en_us/global/logos/discover.png" alt="Discover" class="card-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Old_Visa_Logo.svg/2560px-Old_Visa_Logo.svg.png"
+                        alt="Visa" class="card-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png"
+                        alt="Mastercard" class="card-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/1200px-American_Express_logo_%282018%29.svg.png"
+                        alt="Amex" class="card-icon">
+                    <img src="https://www.discover.com/content/dam/discover/en_us/global/logos/discover.png"
+                        alt="Discover" class="card-icon">
                 </div>
-                
-                <form id="paymentForm">
+
+                {{-- <form id="paymentForm">
                     <div class="form-group">
                         <label for="cardName" class="form-label">Cardholder Name</label>
                         <input type="text" id="cardName" class="form-input" placeholder="John Doe" required>
@@ -640,45 +650,85 @@
                     <div class="secure-payment">
                         <i class="fas fa-lock"></i> Secure Payment Processing
                     </div>
+                </form> --}}
+
+                @if (session('success'))
+                    <div style="color: green;">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                <form id="paymentForm" method="POST" action="{{ route('orders.store') }}">
+                    @csrf
+
+                    <label>Name on Card:</label>
+                    <input type="text" name="card_name" required><br>
+
+                    <label>Card Number:</label>
+                    <input type="text" name="card_number" required><br>
+
+                    <label>Expiry Date:</label>
+                    <input type="text" name="expiry_date" required><br>
+
+                    <label>CVV:</label>
+                    <input type="text" name="cvv" required><br>
+
+                    <label>Billing Address:</label>
+                    <input type="text" name="billing_address" required><br>
+
+                    <label>City:</label>
+                    <input type="text" name="city" required><br>
+
+                    <label>Zip Code:</label>
+                    <input type="text" name="zip_code" required><br>
+
+                    <label>Country:</label>
+                    <input type="text" name="country" required><br>
+
+                    <input type="hidden" name="order_items" id="orderItems">
+
+                    <button type="submit">Pay Now</button>
                 </form>
             </div>
-            
+
             <div class="order-summary">
                 <h2 class="section-title">Order Summary</h2>
-                
+
                 <div class="order-item">
-                    <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3" alt="Burger" class="order-item-img">
+                    <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3"
+                        alt="Burger" class="order-item-img">
                     <div class="order-item-details">
                         <h3 class="order-item-name">Classic Beef Burger</h3>
                         <p class="order-item-price">$8.99</p>
                         <p class="order-item-quantity">Qty: 2</p>
                     </div>
                 </div>
-                
+
                 <div class="order-item">
-                    <img src="https://images.unsplash.com/photo-1625807752781-544f90255196?ixlib=rb-4.0.3" alt="Smoothie" class="order-item-img">
+                    <img src="https://images.unsplash.com/photo-1625807752781-544f90255196?ixlib=rb-4.0.3"
+                        alt="Smoothie" class="order-item-img">
                     <div class="order-item-details">
                         <h3 class="order-item-name">Berry Smoothie</h3>
                         <p class="order-item-price">$5.99</p>
                         <p class="order-item-quantity">Qty: 1</p>
                     </div>
                 </div>
-                
+
                 <div class="order-summary-row">
                     <div>Subtotal</div>
                     <div>$23.97</div>
                 </div>
-                
+
                 <div class="order-summary-row">
                     <div>Delivery Fee</div>
                     <div>$2.99</div>
                 </div>
-                
+
                 <div class="order-summary-row">
                     <div>Tax</div>
                     <div>$1.80</div>
                 </div>
-                
+
                 <div class="order-total">
                     <div>Total</div>
                     <div>$28.76</div>
@@ -686,7 +736,7 @@
             </div>
         </div>
     </main>
-    
+
     <!-- Success Popup -->
     <div class="success-overlay" id="successPopup">
         <div class="success-popup">
@@ -694,7 +744,8 @@
                 <i class="fas fa-check"></i>
             </div>
             <h2 class="success-title">Payment Successful!</h2>
-            <p class="success-message">Your order has been placed successfully. You can track your order in the tracking section.</p>
+            <p class="success-message">Your order has been placed successfully. You can track your order in the
+                tracking section.</p>
             <button class="success-btn" id="continueBtn">Continue Shopping</button>
         </div>
     </div>
@@ -728,18 +779,18 @@
             });
 
             // Form submission
-            const paymentForm = document.getElementById('paymentForm');
-            const successPopup = document.getElementById('successPopup');
-            const continueBtn = document.getElementById('continueBtn');
+            // const paymentForm = document.getElementById('paymentForm');
+            // const successPopup = document.getElementById('successPopup');
+            // const continueBtn = document.getElementById('continueBtn');
 
-            paymentForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                
-                // Here you would typically process the payment
-                // For demo purposes, just show the success popup
-                successPopup.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
-            });
+            // paymentForm.addEventListener('submit', (e) => {
+            //     e.preventDefault();
+
+            //     // Here you would typically process the payment
+            //     // For demo purposes, just show the success popup
+            //     successPopup.classList.add('active');
+            //     document.body.style.overflow = 'hidden'; // Prevent scrolling
+            // });
 
             // Continue shopping button
             continueBtn.addEventListener('click', () => {
@@ -750,5 +801,29 @@
             });
         });
     </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.getElementById('paymentForm');
+
+            form.addEventListener("submit", function(e) {
+                const orderItems = [{
+                        name: "Burger",
+                        price: 10.99,
+                        quantity: 1
+                    },
+                    {
+                        name: "Pizza",
+                        price: 15.49,
+                        quantity: 2
+                    }
+                ];
+                document.getElementById("orderItems").value = JSON.stringify(orderItems);
+                console.log("Order items added:", orderItems);
+            });
+        });
+    </script>
+
 </body>
+
 </html>

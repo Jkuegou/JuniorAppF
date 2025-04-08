@@ -24,6 +24,8 @@ use App\Http\Controllers\FoodController;
 use App\Http\Controllers\TrackingController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\FrestaurantController;
+use App\Http\Controllers\OrderController;
+
 
 use App\Http\Controllers\PaymentController;
 
@@ -43,6 +45,9 @@ Route::middleware(['auth'])->group(function () {
 
 // Service routes
 Route::get('/service', [ServiceController::class, 'index'])->name('service');
+
+Route::post('/place-order', [OrderController::class, 'store'])->name('orders.store');
+
 
 // Shop routes
 Route::get('/shop', [ShopController::class, 'index'])->name('shop');
