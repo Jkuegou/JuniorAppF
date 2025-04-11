@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JuniorFood - Promotions</title>
+    <title>JuniorMarket - Promotions</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
@@ -585,7 +585,7 @@
             align-items: center;
         }
 
-        .sidebar-header h2 {
+        .sidebar-header .logo-text {
             color: var(--text-dark);
             font-size: 22px;
             font-weight: 700;
@@ -1021,7 +1021,7 @@
                 width: 70px;
             }
 
-            .sidebar .sidebar-header h2,
+            .sidebar .sidebar-header .logo-text,
             .sidebar .menu-item span,
             .sidebar .profile-info {
                 display: none;

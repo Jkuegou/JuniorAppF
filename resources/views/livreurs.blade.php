@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JuniorFood - Livreurs</title>
+    <title>JuniorMarket - Livreurs</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
@@ -547,7 +547,7 @@
             align-items: center;
         }
 
-        .sidebar-header h2 {
+        .sidebar-header .logo-text {
             color: var(--text-dark);
             font-size: 22px;
             font-weight: 700;
@@ -983,7 +983,7 @@
                 width: 70px;
             }
 
-            .sidebar .sidebar-header h2,
+            .sidebar .sidebar-header .logo-text,
             .sidebar .menu-item span,
             .sidebar .profile-info {
                 display: none;
@@ -1028,7 +1028,9 @@
    <!-- Sidebar -->
    <div class="sidebar" id="sidebar">
     <div class="sidebar-header">
-        <h2>Junior<span>food</span></h2>
+           <a href="{{ route('dashboard') }}" >
+                 <div class="logo-text">Junior<span>Maket</span></div>
+                </a>
         <div class="sidebar-toggle" id="sidebarToggle">
             <i class="fas fa-bars"></i>
         </div>
@@ -1180,7 +1182,7 @@
                                 <div>Thomas Dubois</div>
                             </div>
                         </td>
-                        <td>thomas.d@juniorfood.fr</td>
+                        <td>thomas.d@JuniorMarket.fr</td>
                         <td>06 12 34 56 78</td>
                         <td>Centre-ville</td>
                         <td>238</td>
@@ -1201,7 +1203,7 @@
                                 <div>Marie Laurent</div>
                             </div>
                         </td>
-                        <td>marie.l@juniorfood.fr</td>
+                        <td>marie.l@JuniorMarket.fr</td>
                         <td>06 23 45 67 89</td>
                         <td>Périphérie</td>
                         <td>186</td>
@@ -1222,7 +1224,7 @@
                                 <div>Lucas Martin</div>
                             </div>
                         </td>
-                        <td>lucas.m@juniorfood.fr</td>
+                        <td>lucas.m@JuniorMarket.fr</td>
                         <td>06 34 56 78 90</td>
                         <td>Banlieue</td>
                         <td>157</td>
@@ -1243,7 +1245,7 @@
                                 <div>Emma Bernard</div>
                             </div>
                         </td>
-                        <td>emma.b@juniorfood.fr</td>
+                        <td>emma.b@JuniorMarket.fr</td>
                         <td>06 45 67 89 01</td>
                         <td>Centre-ville</td>
                         <td>203</td>
@@ -1264,7 +1266,7 @@
                                 <div>Hugo Petit</div>
                             </div>
                         </td>
-                        <td>hugo.p@juniorfood.fr</td>
+                        <td>hugo.p@JuniorMarket.fr</td>
                         <td>06 56 78 90 12</td>
                         <td>Périphérie</td>
                         <td>175</td>

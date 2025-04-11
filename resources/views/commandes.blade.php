@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gestion des Commandes - JuniorFood</title>
+  <title>Gestion des Commandes - JuniorMarket</title>
   <style>
     :root {
       --primary: #ff6600;
@@ -587,7 +587,7 @@
             align-items: center;
         }
 
-        .sidebar-header h2 {
+        .sidebar-header .logo-text {
             color: var(--text-dark);
             font-size: 22px;
             font-weight: 700;
@@ -1023,7 +1023,7 @@
                 width: 70px;
             }
 
-            .sidebar .sidebar-header h2,
+            .sidebar .sidebar-header .logo-text,
             .sidebar .menu-item span,
             .sidebar .profile-info {
                 display: none;
@@ -1068,7 +1068,9 @@
  <!-- Sidebar -->
  <div class="sidebar" id="sidebar">
   <div class="sidebar-header">
-      <h2>Junior<span>food</span></h2>
+      <a href="{{ route('dashboard') }}" >
+                 <div class="logo-text">Junior<span>food</span></div>
+                </a>
       <div class="sidebar-toggle" id="sidebarToggle">
           <i class="fas fa-bars"></i>
       </div>

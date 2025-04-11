@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JuniorFood - Zones de livraison</title>
+    <title>JuniorMarket - Zones de livraison</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
@@ -457,7 +457,9 @@
    <!-- Sidebar -->
    <div class="sidebar" id="sidebar">
     <div class="sidebar-header">
-        <h2>Junior<span>food</span></h2>
+        <a href="{{ route('dashboard') }}" >
+                 <div class="logo-text">Junior<span>Maket</span></div>
+                </a>
         <div class="sidebar-toggle" id="sidebarToggle">
             <i class="fas fa-bars"></i>
         </div>

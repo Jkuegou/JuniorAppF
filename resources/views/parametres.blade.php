@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JuniorFood - Paramètres</title>
+    <title>JuniorMarket - Paramètres</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
@@ -536,7 +536,7 @@
             align-items: center;
         }
 
-        .sidebar-header h2 {
+        .sidebar-header .logo-text {
             color: var(--text-dark);
             font-size: 22px;
             font-weight: 700;
@@ -972,7 +972,7 @@
                 width: 70px;
             }
 
-            .sidebar .sidebar-header h2,
+            .sidebar .sidebar-header .logo-text,
             .sidebar .menu-item span,
             .sidebar .profile-info {
                 display: none;
@@ -1017,7 +1017,9 @@
    <!-- Sidebar -->
    <div class="sidebar" id="sidebar">
     <div class="sidebar-header">
-        <h2>Junior<span>food</span></h2>
+           <a href="{{ route('dashboard') }}" >
+                 <div class="logo-text">Junior<span>Maket</span></div>
+                </a>
         <div class="sidebar-toggle" id="sidebarToggle">
             <i class="fas fa-bars"></i>
         </div>
@@ -1147,12 +1149,12 @@
                     
                     <div class="form-group">
                         <label for="appName">Nom de l'application</label>
-                        <input type="text" id="appName" class="form-control" value="JuniorFood">
+                        <input type="text" id="appName" class="form-control" value="JuniorMarket">
                     </div>
                     
                     <div class="form-group">
                         <label for="contactEmail">Email de contact</label>
-                        <input type="email" id="contactEmail" class="form-control" value="contact@juniorfood.com">
+                        <input type="email" id="contactEmail" class="form-control" value="contact@JuniorMarket.com">
                     </div>
                     
                     <div class="form-group">

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Juniorfood</title>
+    <title>JuniorMarket</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -298,7 +298,7 @@
         <nav class="navbar">
             <a href="/" class="logo">
                 <div class="logo-icon">J</div>
-                Juniorfood
+                JuniorMarket
             </a>
             <div class="nav-links">
                 <a href="/" class="active">Home</a>
@@ -320,7 +320,7 @@
         <section class="hero">
             <div class="hero-content">
                 <h1 class="hero-title">Order Your Favourite Foods & Easy Pickup</h1>
-                <p class="hero-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenea tristique adipiscing feugiat praesent. Et libero sed.</p>
+                <p class="hero-subtitle">Du chef à votre table, en quelques clics</p>
                 <div class="hero-buttons">
                     <a href="{{ route('login') }}" class="btn-primary">Order Now</a>
                     <a href="#" class="btn-video">
@@ -330,7 +330,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="{{ asset('images/logo.jpg') }}" alt="Food Collection" class="food-image" onerror="this.src='https://via.placeholder.com/500x400?text=Food+Collection'">
+                <img src="{{ asset('images/logo.png') }}" alt="Food Collection" class="food-image" onerror="this.src='https://via.placeholder.com/500x400?text=Food+Collection'">
                 <div class="food-card">
                     <div>👨‍🍳</div>
                     <h3 class="food-card-title">Egg Salad</h3>

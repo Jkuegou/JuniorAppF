@@ -277,7 +277,7 @@
         <div class="login-card">
             <div class="login-header">
                 <h2 class="login-title">{{ __('Connexion') }}</h2>
-                <p class="login-subtitle">{{ __('Accédez à votre compte DeliveryHub') }}</p>
+                <p class="login-subtitle">{{ __('Accédez à votre compte JuniorMarket') }}</p>
             </div>
 
             <form method="POST" action="{{ route('login') }}">
@@ -324,7 +324,7 @@
                 </div>
 
                 <div class="register-container">
-                    <span class="register-text">{{ __('Nouveau sur DeliveryHub?') }}</span>
+                    <span class="register-text">{{ __('Nouveau sur JuniorMarket?') }}</span>
                     <a href="{{ route('register') }}" class="register-link">
                         {{ __('Créer un compte') }}
                     </a>

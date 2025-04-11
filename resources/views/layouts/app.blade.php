@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Juniorfood - Online Food Junior</title>
+    <title>JuniorMaket - Online Food Junior</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -640,7 +640,9 @@
         <div class="container">
             <nav class="navbar">
                 <div class="logo">
-                    <div class="logo-text">Junior<span>food</span></div>
+                    <a href="{{ route('dashboard') }}" >
+                 <div class="logo-text">Junior<span>Market</span></div>
+                </a>
                 </div>
 
                 <div class="nav-links">
@@ -714,7 +716,7 @@
             <div class="hero-content">
                 <h1>
                     <span class="fastest">Fastest</span> <span class="online">Online</span><br>
-                    <span class="food">Food</span> <span class="Junior">Junior</span><br>
+                    <span class="food">Market</span> <span class="Junior">Junior</span><br>
                     <span class="service">Service</span>
                 </h1>
 

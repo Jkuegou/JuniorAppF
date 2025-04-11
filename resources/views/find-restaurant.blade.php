@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Juniorfood - Find Restaurant</title>
+    <title>JuniorMarket - Find Restaurant</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -657,7 +657,9 @@
         <div class="container">
             <nav class="navbar">
                 <div class="logo">
-                    <div class="logo-text">Junior<span>food</span></div>
+                    <a href="{{ route('dashboard') }}" >
+                 <div class="logo-text">Junior<span>Maket</span></div>
+                </a>
                 </div>
 
                 <div class="nav-links">
@@ -956,7 +958,7 @@
         <div class="promotion-section">
             <div class="promotion-content">
                 <h2 class="promotion-title">Become a Partner Restaurant</h2>
-                <p class="promotion-description">Join our platform and reach thousands of hungry customers in your area. Increase your sales and grow your business with Juniorfood.</p>
+                <p class="promotion-description">Join our platform and reach thousands of hungry customers in your area. Increase your sales and grow your business with JuniorMarket.</p>
                 <button class="promotion-btn">Apply Now</button>
             </div>
             <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9" alt="Partner with us" class="promotion-image">
@@ -1008,7 +1010,7 @@
                     </div>
                     <div class="footer-contact-item">
                         <i class="fas fa-envelope footer-contact-icon"></i>
-                        <span>info@juniorfood.com</span>
+                        <span>info@JuniorMarket.com</span>
                     </div>
                     <div class="footer-contact-item">
                         <i class="fas fa-clock footer-contact-icon"></i>
@@ -1017,7 +1019,7 @@
                 </div>
             </div>
             <div class="copyright">
-                &copy; 2025 Juniorfood. All Rights Reserved.
+                &copy; 2025 JuniorMarket. All Rights Reserved.
             </div>
         </div>
     </footer>

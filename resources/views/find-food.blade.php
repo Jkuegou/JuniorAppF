@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Juniorfood - Find Food</title>
+    <title>JuniorMarket - Find Food</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -548,7 +548,9 @@
         <div class="container">
             <nav class="navbar">
                 <div class="logo">
-                    <div class="logo-text">Junior<span>food</span></div>
+                    <a href="{{ route('dashboard') }}" >
+                 <div class="logo-text">Junior<span>Market</span></div>
+                </a>
                 </div>
 
                 <div class="nav-links">
@@ -584,7 +586,7 @@
                     <div class="profile-container">
                         <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"
                             alt="Profile" class="profile-img" id="profileImg">
-                        <div class="profile-dropdown" id="profileDropdown">
+                        <div class="profile-dropdown" id="profileDropdown" style="align-items: center;">
                             @auth
                                 @if (auth()->user()->role === 'admin')
                                     <a href="{{ route('admin.dashboard') }}" class="dropdown-item">Admin Dashboard</a>
@@ -592,11 +594,16 @@
                                     <a href="{{ route('user.dashboard') }}" class="dropdown-item">User Dashboard</a>
                                 @endif
                                 <div class="dropdown-divider"></div>
-                                <form method="POST" action="{{ route('logout') }}" class="mt-2 w-full">
+                                <form method="POST" action="{{ route('logout') }}" class="mt-2 w-full" >
                                     @csrf
-                                    <button type="submit" class="text-red-500 hover:text-red-700 text-sm w-full text-left">
+                                    <button type="submit" class="text-red-500 hover:text-red-700 text-sm w-full text-left" style="align-items: center; align-content: center;">
                                         <i class="fas fa-sign-out-alt mr-1"></i> Déconnexion
                                     </button>
+                                    <button class="popup-btn order-now-btn " style="width: 100% ; height: 50px; border-radius: 1px; align-items: center; background-color: white; color: black;">
+            <a href="{{ route('my-orders') }}" style="color: black">
+                <i class="fas fa-bolt mr-2"></i> My Foods
+            </a>
+        </button>
                                 </form>
                             @else
                                 <a href="{{ route('login') }}" class="dropdown-item">Login</a>
@@ -611,11 +618,7 @@
 
     <main class="container">
 
-        <button class="popup-btn order-now-btn">
-            <a href="{{ route('my-orders') }}" style="color: white">
-                <i class="fas fa-bolt mr-2"></i> My Foods
-            </a>
-        </button>
+        
 
 
         <h1 class="page-title">Discover Delicious Foods</h1>
@@ -641,7 +644,7 @@
                     <h3 class="food-name">Classic Beef Burger</h3>
                     <p class="food-category">Burgers</p>
                     <div class="food-bottom">
-                        <div class="food-price">$8.99</div>
+                        <div class="food-price">1500f</div>
                         <div class="add-to-cart">
                             <i class="fas fa-plus"></i>
                         </div>
@@ -659,7 +662,7 @@
                     <h3 class="food-name">Margherita Pizza</h3>
                     <p class="food-category">Pizza</p>
                     <div class="food-bottom">
-                        <div class="food-price">$11.99</div>
+                        <div class="food-price">4500f</div>
                         <div class="add-to-cart">
                             <i class="fas fa-plus"></i>
                         </div>
@@ -676,7 +679,7 @@
                     <h3 class="food-name">Sushi Combo</h3>
                     <p class="food-category">Asian</p>
                     <div class="food-bottom">
-                        <div class="food-price">$15.99</div>
+                        <div class="food-price">3500f</div>
                         <div class="add-to-cart">
                             <i class="fas fa-plus"></i>
                         </div>
@@ -694,7 +697,7 @@
                     <h3 class="food-name">Vanilla Ice Cream</h3>
                     <p class="food-category">Desserts</p>
                     <div class="food-bottom">
-                        <div class="food-price">$4.99</div>
+                        <div class="food-price">1000f</div>
                         <div class="add-to-cart">
                             <i class="fas fa-plus"></i>
                         </div>
@@ -705,14 +708,14 @@
             <!-- Food Item 5 -->
             <div class="food-card" data-id="5" data-name="Spicy Chicken Wings" data-category="Fast Food"
                 data-price="9.99"
-                data-img="https://images.unsplash.com/photo-1619221882266-cf391a57767b?ixlib=rb-4.0.3">
-                <img src="https://images.unsplash.com/photo-1619221882266-cf391a57767b?ixlib=rb-4.0.3"
+                data-img="https://media.istockphoto.com/id/185274327/photo/picture-of-hot-spicy-buffalo-wings.jpg?s=1024x1024&w=is&k=20&c=FQDOnJ41rAf-Mz1QZAXGNSBAjOj9CqHZWdzn1eRnXoE=">
+                <img src="https://media.istockphoto.com/id/185274327/photo/picture-of-hot-spicy-buffalo-wings.jpg?s=1024x1024&w=is&k=20&c=FQDOnJ41rAf-Mz1QZAXGNSBAjOj9CqHZWdzn1eRnXoE="
                     alt="Chicken Wings" class="food-img">
                 <div class="food-info">
                     <h3 class="food-name">Spicy Chicken Wings</h3>
                     <p class="food-category">Fast Food</p>
                     <div class="food-bottom">
-                        <div class="food-price">$9.99</div>
+                        <div class="food-price">1500f</div>
                         <div class="add-to-cart">
                             <i class="fas fa-plus"></i>
                         </div>
@@ -730,7 +733,7 @@
                     <h3 class="food-name">Spaghetti Carbonara</h3>
                     <p class="food-category">Italian</p>
                     <div class="food-bottom">
-                        <div class="food-price">$12.99</div>
+                        <div class="food-price">1250f</div>
                         <div class="add-to-cart">
                             <i class="fas fa-plus"></i>
                         </div>
@@ -741,14 +744,14 @@
             <!-- Food Item 7 -->
             <div class="food-card" data-id="7" data-name="Berry Smoothie" data-category="Drinks"
                 data-price="5.99"
-                data-img="https://images.unsplash.com/photo-1625807752781-544f90255196?ixlib=rb-4.0.3">
-                <img src="https://images.unsplash.com/photo-1625807752781-544f90255196?ixlib=rb-4.0.3" alt="Smoothie"
+                data-img="https://thumbs.dreamstime.com/b/strawberry-smoothie-glass-white-background-36135220.jpg?w=576">
+                <img src="https://thumbs.dreamstime.com/b/strawberry-smoothie-glass-white-background-36135220.jpg?w=576" alt="Smoothie"
                     class="food-img">
                 <div class="food-info">
                     <h3 class="food-name">Berry Smoothie</h3>
                     <p class="food-category">Drinks</p>
                     <div class="food-bottom">
-                        <div class="food-price">$5.99</div>
+                        <div class="food-price">1000f</div>
                         <div class="add-to-cart">
                             <i class="fas fa-plus"></i>
                         </div>
@@ -766,7 +769,7 @@
                     <h3 class="food-name">Caesar Salad</h3>
                     <p class="food-category">Healthy</p>
                     <div class="food-bottom">
-                        <div class="food-price">$7.99</div>
+                        <div class="food-price">2500f</div>
                         <div class="add-to-cart">
                             <i class="fas fa-plus"></i>
                         </div>

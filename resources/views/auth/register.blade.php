@@ -212,7 +212,7 @@
         <div class="register-card">
             <div class="register-header">
                 <h2 class="register-title">{{ __('Créer un compte') }}</h2>
-                <p class="register-subtitle">{{ __('Rejoignez DeliveryHub pour profiter de nos services de livraison') }}</p>
+                <p class="register-subtitle">{{ __('Rejoignez JuniorMarket pour profiter de nos services de livraison') }}</p>
             </div>
 
             <form method="POST" action="{{ route('register') }}">

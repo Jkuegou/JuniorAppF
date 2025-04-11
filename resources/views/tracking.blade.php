@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Juniorfood - Order Tracking</title>
+    <title>JuniorMarket - Order Tracking</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -614,7 +614,9 @@
         <div class="container">
             <nav class="navbar">
                 <div class="logo">
-                    <div class="logo-text">Junior<span>food</span></div>
+                    <a href="{{ route('dashboard') }}" >
+                 <div class="logo-text">Junior<span>Maket</span></div>
+                </a>
                 </div>
 
                 <div class="nav-links">
@@ -783,8 +785,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>About Juniorfood</h3>
-                    <p>Juniorfood is the fastest food delivery service connecting customers with their favorite restaurants all over the world.</p>
+                    <h3>About JuniorMarket</h3>
+                    <p>JuniorMarket is the fastest food delivery service connecting customers with their favorite restaurants all over the world.</p>
                     <p>With our easy-to-use app, you can order delicious meals delivered right to your doorstep within minutes.</p>
                 </div>
                 
@@ -833,7 +835,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 Juniorfood. All rights reserved.</p>
+                <p>&copy; 2025 JuniorMarket. All rights reserved.</p>
             </div>
         </div>
     </footer>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Juniorfood - Cart</title>
+    <title>JuniorMarket - Cart</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -105,7 +105,7 @@
                 <img src="https://via.placeholder.com/80" alt="Food Item">
                 <div class="cart-item-details">
                     <p class="cart-item-title">Grilled Chicken</p>
-                    <p class="cart-item-price">$12.99</p>
+                    <p class="cart-item-price">FCFA12.99</p>
                 </div>
                 <div class="cart-actions">
                     <button class="quantity-btn">-</button>
@@ -117,7 +117,7 @@
                 <img src="https://via.placeholder.com/80" alt="Food Item">
                 <div class="cart-item-details">
                     <p class="cart-item-title">Veggie Burger</p>
-                    <p class="cart-item-price">$9.99</p>
+                    <p class="cart-item-price">FCFA9.99</p>
                 </div>
                 <div class="cart-actions">
                     <button class="quantity-btn">-</button>

@@ -68,9 +68,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 });
 
 // User Routes
-Route::middleware(['auth', 'role:user'])->group(function () {
+// Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/user/dashboard', [UserController::class, 'index'])->name('user.dashboard');
-});
+// });
 
 Route::get('/my-orders', [OrderController::class, 'myOrders'])->name('my-orders');
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Juniorfood - Shop</title>
+    <title>JuniorMarket - Shop</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -342,7 +342,7 @@
         <nav class="navbar">
             <a href="/" class="logo">
                 <div class="logo-icon">J</div>
-                Juniorfood
+                JuniorMarket
             </a>
             <div class="nav-links">
                 <a href="/">Home</a>
@@ -452,11 +452,11 @@
             
             <div class="product-card">
                 <div class="product-image">
-                    <img src="https://i.pinimg.com/736x/cb/ba/3a/cbba3afc98200e1be92e2911842186b4.jpg" alt="Juniorfood Cookbook">
+                    <img src="https://i.pinimg.com/736x/cb/ba/3a/cbba3afc98200e1be92e2911842186b4.jpg" alt="JuniorMarket Cookbook">
                 </div>
                 <div class="product-details">
                     <div class="product-category">Books</div>
-                    <h3 class="product-title">Juniorfood Cookbook</h3>
+                    <h3 class="product-title">JuniorMarket Cookbook</h3>
                     <div class="product-price">$32.50</div>
                     <div class="product-actions">
                         <button class="add-to-cart">Add to Cart</button>

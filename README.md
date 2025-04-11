@@ -39,7 +39,7 @@ Before setting up the project, make sure you have the following installed:
 
 To clone this project to your local machine, open a terminal and run:
 ```bash
-git clone https://github.com/FOMUBAD-BORISTA-FONDI/MultiAuthApp.git
+git clone https://github.com/Jkuegou/JuniorAppF.git
 ```
 
 ```bash
